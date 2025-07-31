@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1753996618.760536,
+    "title": "Completar presentación del proyecto",
+    "description": "Preparar slides y ensayar la presentación para la reunión de mañana",
+    "priority": "Alta",
+    "completed": false,
+    "created_at": "2025-07-31T21:16:58.760601",
+    "updated_at": "2025-07-31T21:16:58.760628"
+  },
+  {
+    "id": 1753996618.760795,
+    "title": "Revisar documentación",
+    "description": "Leer y actualizar la documentación técnica del sistema",
+    "priority": "Media",
+    "completed": false,
+    "created_at": "2025-07-31T21:16:58.760797",
+    "updated_at": "2025-07-31T21:16:58.760799"
+  },
+  {
+    "id": 1753996618.760934,
+    "title": "Organizar escritorio",
+    "description": "Limpiar y organizar el área de trabajo",
+    "priority": "Baja",
+    "completed": true,
+    "created_at": "2025-07-31T21:16:58.760935",
+    "updated_at": "2025-07-31T21:16:58.761797"
+  },
+  {
+    "id": 1753996618.761286,
+    "title": "Llamar al dentista",
+    "description": "Programar cita para limpieza dental",
+    "priority": "Sin prioridad",
+    "completed": false,
+    "created_at": "2025-07-31T21:16:58.761287",
+    "updated_at": "2025-07-31T21:16:58.761288"
+  }
+]
