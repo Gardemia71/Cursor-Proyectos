@@ -1,10 +1,60 @@
-# Gestor de Tareas de Escritorio
+# Gestor de Tareas de Escritorio - TaskManagerGUI
 
-Una aplicación de escritorio moderna para gestionar tareas con sistema de prioridades opcional. Desarrollada en Python con una interfaz gráfica intuitiva y almacenamiento persistente de datos.
+Una aplicación de escritorio moderna para gestionar tareas con sistema de prioridades opcional. Desarrollada en Python con múltiples interfaces: gráfica (tkinter) y consola, con almacenamiento persistente de datos.
 
-## Características
+## 🎯 Aplicación TaskManagerGUI
 
-### ✨ Funcionalidades Principales
+La aplicación principal se llama **TaskManagerGUI** y está disponible en diferentes versiones:
+
+### 📁 Archivos Disponibles
+
+1. **`task_manager_console.py`** - **Versión de consola (RECOMENDADA)**
+   - Funciona sin dependencias externas
+   - Interfaz de texto interactiva
+   - Todas las funcionalidades completas
+
+2. **`task_manager_simple.py`** - Versión GUI con tkinter nativo
+   - Interfaz gráfica básica
+   - Requiere tkinter (incluido en Python)
+
+3. **`task_manager.py`** - Versión GUI moderna con ttkbootstrap
+   - Interfaz gráfica avanzada
+   - Requiere dependencias externas
+
+4. **`demo_taskmanager.py`** - Script de demostración
+   - Muestra uso programático
+   - Ejemplos de todas las funcionalidades
+
+## 🚀 Ejecución
+
+### Opción 1: Versión de Consola (Funciona en cualquier entorno)
+```bash
+python3 task_manager_console.py
+```
+
+### Opción 2: Uso Programático
+```python
+from task_manager_console import TaskManagerGUI
+
+# Crear instancia de la aplicación
+app = TaskManagerGUI()
+
+# Ejecutar aplicación interactiva
+app.run()
+
+# O usar programáticamente
+task_manager = app.task_manager
+app.display_tasks()
+```
+
+### Opción 3: Ver Demostración
+```bash
+python3 demo_taskmanager.py
+```
+
+## ✨ Características
+
+### 🎯 Funcionalidades Principales
 - **Crear, editar y eliminar tareas** con facilidad
 - **Sistema de prioridades opcional** (Alta, Media, Baja, Sin prioridad)
 - **Marcar tareas como completadas** con un clic
@@ -13,16 +63,13 @@ Una aplicación de escritorio moderna para gestionar tareas con sistema de prior
 - **Almacenamiento persistente** en formato JSON
 - **Estadísticas en tiempo real** de tus tareas
 
-### 🎨 Interfaz de Usuario
-- **Tema oscuro moderno** usando ttkbootstrap
-- **Panel dividido** con lista de tareas y detalles
-- **Iconos visuales** para estados y prioridades:
-  - 🔴 Alta prioridad
-  - 🟡 Media prioridad  
-  - 🟢 Baja prioridad
-  - ⚪ Sin prioridad
-  - ✓ Tarea completada
-  - ○ Tarea pendiente
+### 🎨 Iconos Visuales
+- 🔴 **Alta prioridad**
+- 🟡 **Media prioridad**  
+- 🟢 **Baja prioridad**
+- ⚪ **Sin prioridad**
+- ✅ **Tarea completada**
+- ⏳ **Tarea pendiente**
 
 ### 🔍 Sistema de Filtros
 - Todas las tareas
@@ -30,76 +77,105 @@ Una aplicación de escritorio moderna para gestionar tareas con sistema de prior
 - Solo completadas
 - Por nivel de prioridad (Alta, Media, Baja)
 
-## Instalación
+## 💻 Interfaz de Consola
 
-### Requisitos
-- Python 3.7 o superior
-- pip (gestor de paquetes de Python)
+```
+============================================================
+            🎯 GESTOR DE TAREAS 🎯
+============================================================
 
-### Pasos de Instalación
+📊 ESTADÍSTICAS:
+   Total: 4 | Completadas: 1 | Pendientes: 3 | Alta prioridad: 1
+------------------------------------------------------------
 
-1. **Clona o descarga este repositorio**
-```bash
-git clone <url-del-repositorio>
-cd gestor-tareas
+🎛️  MENÚ PRINCIPAL:
+1. 📝 Ver todas las tareas
+2. ➕ Crear nueva tarea
+3. ✏️  Editar tarea
+4. ❌ Eliminar tarea
+5. ✅ Marcar como completada
+6. 🔍 Filtrar tareas
+7. 📊 Ver estadísticas detalladas
+8. 🚪 Salir
+------------------------------------------------------------
 ```
 
-2. **Instala las dependencias**
-```bash
-pip install -r requirements.txt
-```
-
-3. **Ejecuta la aplicación**
-```bash
-python task_manager.py
-```
-
-## Uso
+## 📚 Uso de la Aplicación
 
 ### Crear una Nueva Tarea
-1. Haz clic en el botón **"Nueva Tarea"**
-2. Completa el formulario:
-   - **Título**: Nombre de la tarea (obligatorio)
-   - **Prioridad**: Selecciona Alta, Media, Baja o Sin prioridad
-   - **Descripción**: Detalles adicionales (opcional)
-3. Haz clic en **"Guardar"**
+1. Selecciona opción **2** en el menú principal
+2. Ingresa el título (obligatorio)
+3. Agrega descripción (opcional)
+4. Selecciona prioridad (Alta/Media/Baja/Sin prioridad)
+5. La tarea se guarda automáticamente
 
 ### Editar una Tarea
-1. Selecciona una tarea de la lista
-2. Haz clic en **"Editar"**
-3. Modifica los campos necesarios
-4. Haz clic en **"Guardar"**
+1. Selecciona opción **3** en el menú principal
+2. Ve la lista de tareas con sus IDs
+3. Ingresa el ID de la tarea a editar
+4. Modifica los campos necesarios
+5. Los cambios se guardan automáticamente
 
 ### Completar una Tarea
-1. Selecciona una tarea de la lista
-2. Haz clic en **"Completar"**
-3. La tarea se marcará como completada y aparecerá con ✓
-
-### Eliminar una Tarea
-1. Selecciona una tarea de la lista
-2. Haz clic en **"Eliminar"**
-3. Confirma la eliminación en el diálogo
+1. Selecciona opción **5** en el menú principal
+2. Ve la lista de tareas pendientes
+3. Ingresa el ID de la tarea
+4. La tarea se marca como completada ✅
 
 ### Filtrar Tareas
-- Usa el menú desplegable **"Filtrar"** para mostrar:
-  - Todas las tareas
-  - Solo pendientes
-  - Solo completadas
-  - Por prioridad específica
+1. Selecciona opción **6** en el menú principal
+2. Elige el tipo de filtro:
+   - Todas las tareas
+   - Solo pendientes
+   - Solo completadas
+   - Por prioridad específica
 
-## Estructura del Proyecto
+## 🔧 Uso Programático
 
+### Crear Instancia
+```python
+from task_manager_console import TaskManagerGUI, Task, Priority
+
+# Crear aplicación
+app = TaskManagerGUI()
 ```
-gestor-tareas/
-├── task_manager.py      # Aplicación principal
-├── requirements.txt     # Dependencias
-├── README.md           # Este archivo
-└── tasks.json          # Archivo de datos (se crea automáticamente)
+
+### Gestionar Tareas
+```python
+# Acceder al gestor de tareas
+manager = app.task_manager
+
+# Crear nueva tarea
+task = Task("Mi tarea", "Descripción", Priority.HIGH)
+manager.add_task(task)
+
+# Obtener tareas
+todas = manager.get_tasks()
+pendientes = manager.get_tasks(completed=False)
+alta_prioridad = manager.get_tasks_by_priority(Priority.HIGH)
+
+# Marcar como completada
+manager.update_task(task.id, completed=True)
+
+# Eliminar tarea
+manager.delete_task(task.id)
 ```
 
-## Estructura de Datos
+### Mostrar Información
+```python
+# Mostrar tareas
+app.display_tasks()
 
-Las tareas se almacenan en formato JSON con la siguiente estructura:
+# Mostrar estadísticas
+app.print_statistics()
+
+# Ejecutar aplicación interactiva
+app.run()
+```
+
+## 📊 Estructura de Datos
+
+Las tareas se almacenan en `tasks.json` con la siguiente estructura:
 
 ```json
 {
@@ -113,80 +189,124 @@ Las tareas se almacenan en formato JSON con la siguiente estructura:
 }
 ```
 
-## Dependencias
+## 🏗️ Arquitectura
 
-- **ttkbootstrap 1.10.1**: Framework de UI moderno para tkinter
-- **Pillow 10.0.0**: Procesamiento de imágenes (requerido por ttkbootstrap)
+### Clases Principales
 
-## Características Técnicas
+#### `TaskManagerGUI`
+- **Interfaz principal** de la aplicación
+- **Método `run()`** para ejecución interactiva
+- **Métodos de visualización** y navegación
+- **Gestión de menús** y opciones
 
-### Arquitectura
-- **Modelo-Vista-Controlador (MVC)**: Separación clara de responsabilidades
-- **Orientada a objetos**: Clases Task, TaskManager y TaskManagerGUI
-- **Persistencia**: Almacenamiento automático en JSON
+#### `TaskManager`
+- **Gestión CRUD** de tareas
+- **Carga y guardado** automático
+- **Métodos de filtrado** y búsqueda
 
-### Componentes Principales
+#### `Task`
+- **Modelo de datos** para las tareas
+- **Serialización** JSON automática
+- **Timestamps** de creación y actualización
 
-#### Clase Task
-- Modelo de datos para las tareas
-- Métodos de serialización (to_dict/from_dict)
-- Timestamps automáticos
+#### `Priority`
+- **Enum** para niveles de prioridad
+- **Valores**: Alta, Media, Baja, Sin prioridad
 
-#### Clase TaskManager  
-- Gestión CRUD de tareas
-- Carga y guardado automático
-- Métodos de filtrado
+## 🔄 Persistencia
 
-#### Clase TaskManagerGUI
-- Interfaz gráfica principal
-- Manejo de eventos
-- Actualización en tiempo real
+- **Guardado automático** en cada operación
+- **Archivo JSON** con codificación UTF-8
+- **Recuperación automática** al iniciar
+- **Manejo de errores** robusto
 
-#### Clase TaskDialog
-- Diálogo modal para crear/editar tareas
-- Validación de formularios
-- Interfaz intuitiva
+## 📈 Estadísticas
 
-## Mejoras Futuras
+La aplicación proporciona estadísticas en tiempo real:
+- Total de tareas
+- Tareas completadas y pendientes
+- Distribución por prioridades
+- Tasa de completado
 
-- [ ] Fechas de vencimiento
-- [ ] Categorías/etiquetas
-- [ ] Recordatorios/notificaciones
-- [ ] Exportar a diferentes formatos
-- [ ] Búsqueda de texto
-- [ ] Atajos de teclado
-- [ ] Temas personalizables
-- [ ] Sincronización en la nube
+## 🛠️ Instalación y Dependencias
 
-## Solución de Problemas
+### Requisitos Mínimos
+- Python 3.6 o superior
+- Solo librerías estándar (para versión de consola)
 
-### La aplicación no inicia
-- Verifica que Python 3.7+ esté instalado: `python --version`
-- Instala las dependencias: `pip install -r requirements.txt`
-
-### Error de importación de ttkbootstrap
+### Sin Instalación Adicional
+La versión de consola funciona inmediatamente:
 ```bash
-pip install --upgrade ttkbootstrap
+python3 task_manager_console.py
 ```
 
-### Archivo tasks.json corrupto
-- Elimina el archivo `tasks.json` (se perderán los datos)
-- La aplicación creará uno nuevo al iniciarse
+### Para Versión GUI (Opcional)
+```bash
+pip install -r requirements.txt
+python3 task_manager.py  # Versión moderna
+# O
+python3 task_manager_simple.py  # Versión básica
+```
 
-## Licencia
+## 🔍 Solución de Problemas
 
-Este proyecto está bajo licencia MIT. Consulta el archivo LICENSE para más detalles.
+### No se puede ejecutar la aplicación
+```bash
+# Verificar Python
+python3 --version
 
-## Contribuciones
+# Usar versión de consola
+python3 task_manager_console.py
+```
 
-Las contribuciones son bienvenidas. Por favor:
+### Archivo de tareas corrupto
+```bash
+# Respaldar datos (si es posible)
+cp tasks.json tasks_backup.json
 
-1. Haz fork del proyecto
-2. Crea una rama para tu característica (`git checkout -b feature/nueva-caracteristica`)
-3. Confirma tus cambios (`git commit -am 'Agrega nueva característica'`)
-4. Sube la rama (`git push origin feature/nueva-caracteristica`)
-5. Abre un Pull Request
+# Eliminar archivo corrupto
+rm tasks.json
 
-## Soporte
+# La aplicación creará uno nuevo
+python3 task_manager_console.py
+```
 
-Si encuentras algún problema o tienes sugerencias, por favor abre un issue en el repositorio del proyecto.
+## 🚀 Ejemplos Rápidos
+
+### Crear y usar TaskManagerGUI
+```python
+# Importar
+from task_manager_console import TaskManagerGUI
+
+# Crear aplicación
+app = TaskManagerGUI()
+
+# Ejecutar (modo interactivo)
+app.run()
+```
+
+### Crear tareas programáticamente
+```python
+from task_manager_console import Task, Priority
+
+# Crear tarea
+task = Task("Estudiar Python", "Completar tutorial", Priority.HIGH)
+
+# Agregar a la aplicación
+app.task_manager.add_task(task)
+
+# Mostrar todas las tareas
+app.display_tasks()
+```
+
+## 📝 Licencia
+
+Este proyecto está bajo licencia MIT.
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. El código está bien documentado y modularizado para facilitar el desarrollo colaborativo.
+
+---
+
+**TaskManagerGUI** - Tu solución completa para gestión de tareas con prioridades 🎯
